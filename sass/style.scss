@@ -1,6 +1,124 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/color";
+
+$bg-color: #efefef;
+$text-color: #4f4f4f;
+$second-text-color: #d9dada;
+$highlight-text-color: white;
+$button-color: #6cdcac;
 
 body {
+	font-family: Arial, Sans-serif;
 	font-size: 62.5%;
+	text-align: center;
+}
+
+.hero {
+	max-width: 100em;
+	margin: 0 auto;
+
+	background: url('/images/find-an-agnet-hero.jpg');
+	background-size: cover;
+	color: $highlight-text-color;
+
+	header {
+		padding: 2em;
+		img {
+			width: 8em;
+			height: 2em;
+			float: left;
+		}
+		ul {
+			float: right;
+			li {
+				float: left;
+				margin: 0.5em;
+				padding: 1em;
+			}
+		}
+		@include clearfix()
+	}
+
+	h1 {
+		font-size: 4em;
+		font-weight: bold;
+		padding: 1em 0 .5em 0;
+	}
+
+	h2 {
+		font-size: 2em;
+		color: $second-text-color;
+	}
+
+	form {
+		padding: 2em 0 4em 0;
+
+		input[type="text"] {
+			padding: 1em;
+			border: 0;
+			width: 18em;
+			border-radius: 2px 0 0 2px;
+			background: $bg-color;
+			opacity: .6;
+		}
+
+		input[type="button"] {
+			padding: 1em;
+			border: 0;
+			width: 6em;
+			border-radius: 0 2px 2px 0;
+			background-color: lightgreen;
+			color: $highlight-text-color;
+			text-transform: uppercase;
+		}
+	}
+
+	li {
+		float: left;
+		margin: 1em .5em;
+		padding: .5em 1em;
+		border: 1px solid transparent;
+		border-radius: 2px;
+		&:last-child {
+			border: 1px solid $highlight-text-color;
+		}
+	}
+}
+
+.numbers {
+	width: 80%;
+	margin: 0 auto;
+
+	ul {
+		position: relative;
+		top: -1em;
+		background: $bg-color;
+
+		li {
+			float: left;
+			width: 25%;
+			box-sizing: border-box;
+			border-top: 1px solid $second-text-color;
+			border-bottom: 1px solid $second-text-color;
+			border-left: 1px solid $second-text-color;
+		}
+
+		&:last-child {
+			border-right: 1px solid $second-text-color;
+		}
+
+		h2 {
+			font-size: 2em;
+			padding: 1em 0;
+		}
+
+		h3 {
+			padding: 0 0 2em 0;
+		}
+
+		@include clearfix;
+	}
+	
 }
